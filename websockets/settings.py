@@ -128,7 +128,6 @@ STATICFILES_DIRS = (
 )
 
 
-
 CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "asgiref.inmemory.ChannelLayer",
@@ -150,6 +149,6 @@ if 'ON_HEROKU' in os.environ:
                 "CONFIG": {
                     "hosts": [os.environ.get('REDIS_URL', 'redis://localhost:6379')],
                 },
-                "ROUTING": "myproject.routing.channel_routing",
+                "ROUTING": "websockets.routing.channel_routing",
             },
         }
